@@ -15,6 +15,7 @@ def main_menu():
     print('')
     print('0) Выход из приложения')
     print('')
+    print('***|||***|||***')
 
     def variant():
         variant = input('Введите номер пункта меню: ')
@@ -24,13 +25,33 @@ def main_menu():
 
     return variant
 
+def procent():
+    summa = input('Введите сумму: ')
+    proc = input('Введите процент: ')
+    result = int(summa) / 100 * int(proc)
+    print('Процент от суммы равен ', result)
+    print('')
+
 print('Здравствуйте! Я - финансовый помощник.')
 print('***|||***|||***')
 print('Показать вам, что я могу?')
 print('')
 
-variant = main_menu()
+def vibor():
+    variant = main_menu()
+    if variant == '0':
+        print('До новых встреч!')
+        sys.exit()
+    elif variant == '1':
+        print('Рассчитаем процент от суммы.')
+        procent()
+        vibor()
+    else:
+        print('')
+        print('******************')
+        print('Неправильный ввод!')
+        print('******************')
+        print('')
+        vibor()
 
-if variant == 0:
-    print('До новых встреч!')
-    sys.exit()
+vibor()
