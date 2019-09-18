@@ -29,7 +29,7 @@ def procent():
     summa = input('Введите сумму: ')
     proc = input('Введите процент: ')
     result = int(summa) / 100 * int(proc)
-    print('Процент от суммы равен ', result)
+    print('Процент от суммы равен ', round(result, 2))
     print('')
 
 print('Здравствуйте! Я - финансовый помощник.')
